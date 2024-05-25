@@ -6,3 +6,4 @@ Hardware:
 RaspberryPi 3 - A Plus
 BMT22 - Environmental Sensor
 Adafruit 16 x 2 LCD display
+10k Potentiometer for backlight control
