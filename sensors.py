@@ -9,6 +9,7 @@ import time
 import json
 from utils.command_line_utils import CommandLineUtils
 import temp_hum
+import display
 
 # This sample uses the Message Broker for AWS IoT to send and receive messages
 # through an MQTT connection. On startup, the device connects to the server,
@@ -134,6 +135,7 @@ if __name__ == '__main__':
         publish_count = 1
         while (publish_count <= message_count) or (message_count == 0):
             temperature, humidity = temp_hum.get_data()
+            display.display_message(temperature, humidity)
             message = {'Temperature':temperature, 'Humidity':humidity}
             print("Publishing message to topic '{}': {}".format(message_topic, message))
             message_json = json.dumps(message)
